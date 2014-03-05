@@ -5,12 +5,14 @@
 #include "TAppKillManager.hpp"
 
 TAppKillManager::TAppKillManager(TApplication& p_app):
+   TQObject(),
    m_app(p_app)
 {
    // Connections
    TQObject::Connect("TGMainFrame",           "CloseWindow()",
                      "TAppKillManager", this, "SlotWindowClosed()");
 }
+
 void TAppKillManager::SlotWindowClosed()
 {
    TIter next(gClient->GetListOfWindows());
@@ -26,6 +28,3 @@ void TAppKillManager::SlotWindowClosed()
       m_app.Terminate();
    }
 }
-
-
-

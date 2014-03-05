@@ -13,10 +13,18 @@
 class TAppKillManager : public TQObject
 {
 public:
+   /*!
+    * Constructor.
+    * \param p_app application to be managed (by reference)
+    */
    TAppKillManager(TApplication& p_app);
+   /*!
+    * Slot to be called when window is closed.
+    * Terminates application if now window is left.
+    */
    void SlotWindowClosed();
 private:
-   TApplication& m_app;
+   TApplication& m_app;   // reference to application
 
 ClassDef(TAppKillManager, 1)
 };

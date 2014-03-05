@@ -23,7 +23,7 @@ void analysis()
  */
 int main(int argc, char* argv[])
 {
-   TApplication app("Example", 0, 0);
+   TApplication app("Example", &argc, argv);
    TAppKillManager killer(app);
    analysis();
    app.Run();
