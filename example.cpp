@@ -14,6 +14,7 @@ void analysis()
 {
    // your analysis here...
    TCanvas* can = new TCanvas("can","Example");
+   (void)can;
 }
 
 /*!

@@ -19,7 +19,7 @@ void TAppKillManager::SlotWindowClosed()
    TObject *o;
    Int_t iMainFrames = 0;
    // count frames
-   while (o=next()) {
+   while ((o=next())) {
       if (o->InheritsFrom(TGMainFrame::Class()))
          iMainFrames++;
    }
