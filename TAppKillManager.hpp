@@ -18,6 +18,13 @@ public:
     * \param p_app application to be managed (by reference)
     */
    TAppKillManager(TApplication& p_app);
+   
+   /*!
+    * if sender sends signal, the managed TApplication
+    * is terminated.
+    */
+   void KillOnSignal(TQObject* sender, const char* signal);
+   
    /*!
     * Slot to be called when window is closed.
     * Terminates application if now window is left.

@@ -28,3 +28,9 @@ void TAppKillManager::SlotWindowClosed()
       m_app.Terminate();
    }
 }
+
+void TAppKillManager::KillOnSignal(TQObject* sender, const char* signal)
+{
+   sender->Connect(sender,                "CloseWindow()",
+                  "TApplication", &m_app, "Terminate()"  );
+}
